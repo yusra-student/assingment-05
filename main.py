@@ -126,7 +126,7 @@ elif choice == "Retrieve Data":
                 st.error(f"❌ Incorrect credentials! Attempts remaining: {remaining}")
                 if st.session_state.failed_attempts >= 3:
                     st.warning("🔒 Too many attempts. Redirecting to login.")
-                    st.experimental_rerun()
+                    st.rerun()
         else:
             st.error("⚠️ All fields are required.")
 
@@ -140,6 +140,6 @@ elif choice == "Login":
             st.session_state.failed_attempts = 0
             st.success("✅ Access restored. You can now retry decryption.")
             time.sleep(1)
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("❌ Invalid master password.")
